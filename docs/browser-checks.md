@@ -1,6 +1,6 @@
 # Browser verification
 
-Build first with `python3 scripts/build.py`. Browser checks require Node.js 22 or newer and Chromium or Chrome with a local debugging endpoint. Use a temporary browser profile dedicated to these checks.
+Follow the [source setup guide](development.md) and build first with `python3 scripts/build.py`. Browser checks require Node.js 22 or newer and Chromium or Chrome with a local debugging endpoint. Use a temporary browser profile dedicated to these checks.
 
 In separate terminals, from the repository root:
 

@@ -22,12 +22,12 @@ The photographs document Kabakoo’s work. The interface examples preserve the o
 
 ## Drawings and brand assets
 
-The original explanatory SVG drawings in `assets/figures/` are editable and shared with the text under [CC BY-SA 4.0](LICENSE-CONTENT.txt). Credit Kabakoo Academies, retain evidence references where applicable, and identify changes. Any embedded font software retains its own license.
+The original explanatory SVG drawings in `assets/figures/` are editable and shared with the text under [CC BY-SA 4.0](../LICENSE-CONTENT.txt). Credit Kabakoo Academies, retain evidence references where applicable, and identify changes. Any embedded font software retains its own license.
 
 `assets/kabakoo-logo.png` and `assets/favicon.png` identify Kabakoo. Their inclusion does not grant trademark rights or imply endorsement of an adaptation. Contact Kabakoo about uses outside attribution to this publication.
 
 ## Fonts and generated libraries
 
-The included Lato and Rubik webfonts retain their SIL Open Font License terms. The upstream notices are supplied in [Lato-OFL.txt](licenses/Lato-OFL.txt) and [Rubik-OFL.txt](licenses/Rubik-OFL.txt), including for fonts embedded in SVGs. Sources: [Google Fonts’ Lato distribution](https://github.com/google/fonts/tree/main/ofl/lato) and [Rubik distribution](https://github.com/google/fonts/tree/main/ofl/rubik).
+The included Lato and Rubik webfonts retain their SIL Open Font License terms. The upstream notices are supplied in [Lato-OFL.txt](../licenses/Lato-OFL.txt) and [Rubik-OFL.txt](../licenses/Rubik-OFL.txt), including for fonts embedded in SVGs. Sources: [Google Fonts’ Lato distribution](https://github.com/google/fonts/tree/main/ofl/lato) and [Rubik distribution](https://github.com/google/fonts/tree/main/ofl/rubik).
 
 Quarto supplies additional browser libraries when the site is rendered. Those generated files retain their upstream notices and licenses and are not tracked as authored code in this repository.

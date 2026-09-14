@@ -1,15 +1,19 @@
 # Contributing
 
-Thank you for helping improve [Kabakoo Academies’](https://www.kabakoo.africa/) [AI for livelihoods playbook](https://playbook.kabakoo.africa/).
+Help improve [Kabakoo Academies’](https://www.kabakoo.africa/) [AI for livelihoods playbook](https://playbook.kabakoo.africa/) through corrections, translations, or accounts of how you have adapted its tools.
 
-For a correction, open an issue with the chapter, passage, proposed correction, and supporting source. For a substantial addition or translation, open an issue describing the audience and scope before preparing a full draft. Kabakoo reviews contributions before incorporating them into the published edition.
+## Suggest a correction or translation
 
-Edit the `.qmd` source or the relevant asset and run `python3 scripts/build.py`. Submit a pull request that explains the reader-facing change and how it was checked. Include browser verification for changes to navigation, styles, or working tools; see [BROWSER-CHECKS.md](BROWSER-CHECKS.md). Generated output is excluded from Git. A merged change does not automatically deploy the public website.
+[Open an issue](https://github.com/Kabakoo/ai-for-livelihoods-playbook/issues/new) with the chapter, passage, proposed correction, and supporting source. For a substantial addition or translation, describe the intended audience and scope before preparing a full draft. Kabakoo reviews contributions before incorporating them into the published edition.
 
-Preserve evidence citations, the scope and date of reported findings, and the distinction between actual observations and example exercises. Do not introduce learner contact details, private conversation records, access credentials, or internal research material in issues or contributions. Use the already published, prepared illustrations and interface examples when discussing the edition.
+Keep evidence citations, dates, and the distinction between observed results and example exercises. Share only material you have the right to publish, and keep learner contact details and private conversations out of submissions.
 
-Text, worksheets, and original explanatory-drawing contributions use CC BY-SA 4.0; code contributions use Apache-2.0. Submit only material you have the right to share. Fonts and documentary or brand assets retain their separate terms in [ASSETS.md](ASSETS.md).
+## Contribute source changes
 
-For adaptations, identify your changes and retain credit to [Kabakoo Academies](https://www.kabakoo.africa/) and a link to the [original playbook](https://playbook.kabakoo.africa/). Make your edition’s relationship to the original clear. If you publish it at another address, set `PLAYBOOK_URL` and `book.site-url` in `_quarto.yml` to your edition’s full base URL, and update `CITATION.cff` and the citation in `versions.qmd`. Keep the attribution links to Kabakoo’s original edition.
+Follow the [source setup guide](docs/development.md) to edit and preview the playbook. Submit a pull request explaining what changes for readers and how you checked it. Changes to navigation, styles, or working tools also need the [browser checks](docs/browser-checks.md).
+
+## Share an adaptation
+
+Identify your changes, credit [Kabakoo Academies](https://www.kabakoo.africa/), and link to the [original playbook](https://playbook.kabakoo.africa/). Make your edition’s relationship to the original clear. Text, worksheets, and original explanatory drawings use CC BY-SA 4.0; code uses Apache-2.0. Photographs, screenshots, fonts, and brand assets retain the [separate terms described here](docs/assets.md).
 
 For questions that should not be public, contact [akwaba@kabakoo.africa](mailto:akwaba@kabakoo.africa).
