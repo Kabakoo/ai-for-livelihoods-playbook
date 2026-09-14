@@ -1,0 +1,83 @@
+project:
+  type: book
+  output-dir: _render
+  resources:
+  - assets/**
+  - CITATION.cff
+  - LICENSE-CONTENT.txt
+lang: en-US
+book:
+  title: Building AI Applications for Livelihoods
+  subtitle: Lessons and tools from Kabakoo’s WhatsApp learning system
+  author: Kabakoo Academies
+  date: '2026-09-14'
+  date-format: MMMM D, YYYY
+  output-file: building-ai-for-livelihoods-v7
+  description: A practical playbook for organizations designing, building, and testing
+    AI applications for livelihoods, with lessons from Kabakoo’s WhatsApp learning
+    system.
+  site-url: https://playbook.kabakoo.africa/
+  favicon: assets/favicon.png
+  image: assets/social-preview.png
+  image-alt: Building AI Applications for Livelihoods, a playbook by Kabakoo Academies.
+  open-graph: true
+  twitter-card: true
+  search: true
+  sidebar:
+    logo: assets/kabakoo-logo.png
+    logo-href: https://www.kabakoo.africa/
+    logo-alt: Kabakoo Academies
+    tools:
+    - icon: house
+      href: https://www.kabakoo.africa/
+      text: Kabakoo Academies
+    style: docked
+  page-footer:
+    left: Kabakoo Academies | CC BY-SA 4.0
+    right:
+    - text: Sources
+      href: sources.qmd
+    - text: About this edition
+      href: versions.qmd
+    - text: Contact
+      href: mailto:akwaba@kabakoo.africa
+  chapters:
+  - href: index.qmd
+    text: Start here
+  - part: Foundations
+    chapters:
+    - chapters/01-problem-framing.qmd
+    - chapters/02-theory-of-change.qmd
+    - chapters/03-readiness.qmd
+  - part: Design and implementation
+    chapters:
+    - chapters/04-product-design.qmd
+    - chapters/05-architecture.qmd
+    - chapters/06-ai-mentors.qmd
+    - chapters/07-onboarding.qmd
+  - part: Continuation, relationships, and experiments
+    chapters:
+    - chapters/08-continuation.qmd
+    - chapters/09-peer-learning.qmd
+    - chapters/10-experiments.qmd
+  - coming-next.qmd
+  - field-notes.qmd
+  - resources.qmd
+  - sources.qmd
+  - versions.qmd
+format:
+  html:
+    theme:
+    - cosmo
+    - assets/publication.scss
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    code-copy: true
+    link-external-newwindow: false
+    include-in-header: assets/runtime-head.html
+    include-after-body:
+    - assets/publication.js.html
+    - assets/public-links.js.html
+crossref:
+  chapters: false

@@ -1,0 +1,31 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const home = new URL(document.querySelector('.sidebar-title a').href);
+  home.pathname = home.pathname.replace(/index\.html$/, '');
+  const roots = [home, new URL('https://playbook.kabakoo.africa/')];
+  const prepare = link => {
+    const href = link.getAttribute('href') || '';
+    let url;
+    try { url = new URL(href, location.href); } catch { return; }
+    const internal = roots.some(root => url.origin === root.origin &&
+      (url.pathname === root.pathname.replace(/\/$/, '') || url.pathname.startsWith(root.pathname)));
+    if (internal || !['http:', 'https:'].includes(url.protocol)) {
+      link.removeAttribute('target');
+      link.relList.remove('noopener', 'noreferrer');
+      if (!link.rel) link.removeAttribute('rel');
+      return;
+    }
+    link.target = '_blank';
+    link.rel = [...new Set([...link.relList, 'noopener', 'noreferrer'])].join(' ');
+  };
+  const scan = root => {
+    if (root.matches?.('a[href]')) prepare(root);
+    root.querySelectorAll?.('a[href]').forEach(prepare);
+  };
+  scan(document);
+  new MutationObserver(records => records.forEach(record => {
+    if (record.type === 'attributes') scan(record.target);
+    else record.addedNodes.forEach(scan);
+  })).observe(document.body, {childList: true, subtree: true, attributes: true, attributeFilter: ['href']});
+});
+</script>

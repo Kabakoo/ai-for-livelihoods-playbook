@@ -1,0 +1,25 @@
+---
+description: Five forthcoming chapters on outcomes, governance, teams, costs, and adaptation. Contact Kabakoo for early access.
+---
+
+# Coming next
+
+Building a learning system opens a longer set of questions. Does it change people’s opportunities? Who is accountable for the service? What does it take to sustain the work and adapt it to another setting?
+
+::: {.reading-rule}
+The next five chapters will follow those questions. **Contact us if you would like early access as they become available.** Tell us <mark class="reading-mark">which chapter interests you</mark> and what you are working on.
+:::
+
+```{=html}
+<div class="coming-chapters">
+<article><span class="card-number">11 / OUTCOMES</span><h2>Measure economic mobility and agency</h2><p>Connect participation and applied capability to work, income, choices, and opportunities over time. Examine follow-up, comparison groups, and what current evidence can establish.</p><a href="mailto:akwaba@kabakoo.africa?subject=Playbook%20early%20access%20%E2%80%94%20Chapter%2011">Request Chapter 11 early access</a></article>
+<article><span class="card-number">12 / GOVERNANCE</span><h2>Govern the data and the learning relationship</h2><p>Work through permission, access, contribution, withdrawal, and accountability across learner records, conversations, and language data.</p><a href="mailto:akwaba@kabakoo.africa?subject=Playbook%20early%20access%20%E2%80%94%20Chapter%2012">Request Chapter 12 early access</a></article>
+<article><span class="card-number">13 / TEAM</span><h2>Organize the team behind the system</h2><p>Connect learning design, engineering, community work, and research. Define ownership of releases, learner support, and decisions when the service fails.</p><a href="mailto:akwaba@kabakoo.africa?subject=Playbook%20early%20access%20%E2%80%94%20Chapter%2013">Request Chapter 13 early access</a></article>
+<article><span class="card-number">14 / COSTS</span><h2>Understand what delivery actually costs</h2><p>Account for messaging, models, infrastructure, content, and human support. Examine costs per person reached, active learner, and completed learning task.</p><a href="mailto:akwaba@kabakoo.africa?subject=Playbook%20early%20access%20%E2%80%94%20Chapter%2014">Request Chapter 14 early access</a></article>
+<article><span class="card-number">15 / ADAPTATION</span><h2>Adapt the system to another setting</h2><p>Decide what needs local research, language work, institutional relationships, and a new pilot. Carry forward useful mechanisms while testing the assumptions of a new context.</p><a href="mailto:akwaba@kabakoo.africa?subject=Playbook%20early%20access%20%E2%80%94%20Chapter%2015">Request Chapter 15 early access</a></article>
+</div>
+```
+
+You can also write directly to [akwaba@kabakoo.africa](mailto:akwaba@kabakoo.africa). We welcome questions and accounts of how you are using the playbook.
+
+[Return to the ten published chapters](index.qmd) · [Develop your working notes](resources.qmd)

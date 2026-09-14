@@ -1,0 +1,167 @@
+---
+description: Work through ten practical design tools directly in the playbook.
+---
+
+# Your working notes
+
+::: {.reading-rule}
+Use these ten tools with your learning, engineering, and community colleagues. Choose a decision, write a concrete answer, and return to the chapter when you need an example.
+:::
+
+- **Save notes** stores that tool’s text <mark class="reading-mark">in this browser on this device</mark>. Nothing is sent to Kabakoo. Other people using the same browser can read saved notes.
+- **Copy notes** lets you paste the tool into a shared document. **Clearing browser data removes saved work.**
+
+Use project decisions and anonymized observations; keep participant records in your organization’s own system.
+
+[1. Frame the problem](#problem) · [2. Trace the change](#change) · [3. Decide what the pilot needs](#readiness) · [4. Design one learning sequence](#sequence) · [5. Rehearse the failure paths](#architecture) · [6. Review a mentor response](#mentor) · [7. Investigate a first action](#onboarding)
+
+[8. Plan a route back](#continuation) · [9. Design useful peer help](#peers) · [10. Plan an experiment](#experiments)
+
+## 1. Frame the problem {#problem}
+
+[Read the chapter](chapters/01-problem-framing.qmd)
+
+```{=html}
+<form class="workpad" data-workpad="problem" data-title="1. Frame the problem">
+<label for="problem-work">What work is the person already doing?</label><textarea id="problem-work" name="work" rows="3" maxlength="6000"></textarea>
+<label for="problem-obstacle">What specific obstacle did you observe?</label><textarea id="problem-obstacle" name="obstacle" rows="3" maxlength="6000"></textarea>
+<label for="problem-support">Who supplies information, whom does the person trust, and what already helps?</label><textarea id="problem-support" name="support" rows="3" maxlength="6000"></textarea>
+<label for="problem-contribution">What useful action could the application support, and what must the person control?</label><textarea id="problem-contribution" name="contribution" rows="3" maxlength="6000"></textarea>
+<label for="problem-evidence">What evidence would change this brief?</label><textarea id="problem-evidence" name="evidence" rows="3" maxlength="6000"></textarea>
+<div class="workpad-actions"><button type="button" data-save>Save notes</button><button type="button" data-copy>Copy notes</button><button type="button" data-clear>Clear this tool</button></div><p class="workpad-status" role="status">Not saved yet.</p></form>
+```
+
+## 2. Trace the change {#change}
+
+[Read the chapter](chapters/02-theory-of-change.qmd)
+
+```{=html}
+<form class="workpad" data-workpad="change" data-title="2. Trace the change">
+<label for="change-activity">What does the program offer?</label><textarea id="change-activity" name="activity" rows="3" maxlength="6000"></textarea>
+<label for="change-action">What will the learner do with it?</label><textarea id="change-action" name="action" rows="3" maxlength="6000"></textarea>
+<label for="change-relationship">Who else contributes, and how can the learner choose that connection?</label><textarea id="change-relationship" name="relationship" rows="3" maxlength="6000"></textarea>
+<label for="change-outcome">Which livelihood outcome could follow?</label><textarea id="change-outcome" name="outcome" rows="3" maxlength="6000"></textarea>
+<label for="change-assumption">Which response behavior tests the mechanism, and what alternative explanation will you examine?</label><textarea id="change-assumption" name="assumption" rows="3" maxlength="6000"></textarea>
+<label for="change-levels">What evidence belongs at Model, Product, User, and Impact levels?</label><textarea id="change-levels" name="levels" rows="3" maxlength="6000"></textarea>
+<div class="workpad-actions"><button type="button" data-save>Save notes</button><button type="button" data-copy>Copy notes</button><button type="button" data-clear>Clear this tool</button></div><p class="workpad-status" role="status">Not saved yet.</p></form>
+```
+
+## 3. Decide what the pilot needs {#readiness}
+
+[Read the chapter](chapters/03-readiness.qmd)
+
+```{=html}
+<form class="workpad" data-workpad="readiness" data-title="3. Decide what the pilot needs">
+<label for="readiness-population">Who will participate, including people who never began, stopped, or use a borrowed device?</label><textarea id="readiness-population" name="population" rows="3" maxlength="6000"></textarea>
+<label for="readiness-task">What realistic task will they attempt?</label><textarea id="readiness-task" name="task" rows="3" maxlength="6000"></textarea>
+<label for="readiness-observation">What happened, what did the person say, and how was the logged event recorded?</label><textarea id="readiness-observation" name="observation" rows="3" maxlength="6000"></textarea>
+<label for="readiness-issue">What blocks the pilot or needs investigation?</label><textarea id="readiness-issue" name="issue" rows="3" maxlength="6000"></textarea>
+<label for="readiness-decision">What will change, who owns it, and how will you check it?</label><textarea id="readiness-decision" name="decision" rows="3" maxlength="6000"></textarea>
+<div class="workpad-actions"><button type="button" data-save>Save notes</button><button type="button" data-copy>Copy notes</button><button type="button" data-clear>Clear this tool</button></div><p class="workpad-status" role="status">Not saved yet.</p></form>
+```
+
+## 4. Design one learning sequence {#sequence}
+
+[Read the chapter](chapters/04-product-design.qmd)
+
+```{=html}
+<form class="workpad" data-workpad="sequence" data-title="4. Design one learning sequence">
+<label for="sequence-attempt">What will the learner produce, with which instructions and accepted formats?</label><textarea id="sequence-attempt" name="attempt" rows="3" maxlength="6000"></textarea>
+<label for="sequence-receipt">How will the system acknowledge receipt?</label><textarea id="sequence-receipt" name="receipt" rows="3" maxlength="6000"></textarea>
+<label for="sequence-feedback">What feedback and next action follow validation or a request to revise?</label><textarea id="sequence-feedback" name="feedback" rows="3" maxlength="6000"></textarea>
+<label for="sequence-peer">What will a peer contribute?</label><textarea id="sequence-peer" name="peer" rows="3" maxlength="6000"></textarea>
+<label for="sequence-revision">How can the learner find the task again, revise it, or ask for help?</label><textarea id="sequence-revision" name="revision" rows="3" maxlength="6000"></textarea>
+<label for="sequence-record">Which task, submission, and feedback versions remain linked?</label><textarea id="sequence-record" name="record" rows="3" maxlength="6000"></textarea>
+<div class="workpad-actions"><button type="button" data-save>Save notes</button><button type="button" data-copy>Copy notes</button><button type="button" data-clear>Clear this tool</button></div><p class="workpad-status" role="status">Not saved yet.</p></form>
+```
+
+## 5. Rehearse the failure paths {#architecture}
+
+[Read the chapter](chapters/05-architecture.qmd)
+
+```{=html}
+<form class="workpad" data-workpad="architecture" data-title="5. Rehearse the failure paths">
+<label for="architecture-trace">What carries the message from the phone to the system and back?</label><textarea id="architecture-trace" name="trace" rows="3" maxlength="6000"></textarea>
+<label for="architecture-state">Where do task state, media, and delivery status live?</label><textarea id="architecture-state" name="state" rows="3" maxlength="6000"></textarea>
+<label for="architecture-failure">What happens after a duplicate, timeout, late response, or incorrect conversation route?</label><textarea id="architecture-failure" name="failure" rows="3" maxlength="6000"></textarea>
+<label for="architecture-eligibility">How does the worker check conversation scope, ownership, opt-out, and messaging eligibility?</label><textarea id="architecture-eligibility" name="eligibility" rows="3" maxlength="6000"></textarea>
+<label for="architecture-acceptance">What did the phone, database, and operator each show in the rehearsal?</label><textarea id="architecture-acceptance" name="acceptance" rows="3" maxlength="6000"></textarea>
+<div class="workpad-actions"><button type="button" data-save>Save notes</button><button type="button" data-copy>Copy notes</button><button type="button" data-clear>Clear this tool</button></div><p class="workpad-status" role="status">Not saved yet.</p></form>
+```
+
+## 6. Review a mentor response {#mentor}
+
+[Read the chapter](chapters/06-ai-mentors.qmd)
+
+```{=html}
+<form class="workpad" data-workpad="mentor" data-title="6. Review a mentor response">
+<label for="mentor-task">What task and submission does the response address?</label><textarea id="mentor-task" name="task" rows="3" maxlength="6000"></textarea>
+<label for="mentor-version">Which prompt, model, retrieval collection, and product versions were tested?</label><textarea id="mentor-version" name="version" rows="3" maxlength="6000"></textarea>
+<label for="mentor-rubric">Which criteria and cases did reviewers test, and what remains uncovered?</label><textarea id="mentor-rubric" name="rubric" rows="3" maxlength="6000"></textarea>
+<label for="mentor-judgment">What failed in meaning, format, speech, or human connection, and where did reviewers disagree?</label><textarea id="mentor-judgment" name="judgment" rows="3" maxlength="6000"></textarea>
+<label for="mentor-recovery">What correction or human escalation is needed?</label><textarea id="mentor-recovery" name="recovery" rows="3" maxlength="6000"></textarea>
+<label for="mentor-followup">What did the learner do next, including if they stopped?</label><textarea id="mentor-followup" name="followup" rows="3" maxlength="6000"></textarea>
+<div class="workpad-actions"><button type="button" data-save>Save notes</button><button type="button" data-copy>Copy notes</button><button type="button" data-clear>Clear this tool</button></div><p class="workpad-status" role="status">Not saved yet.</p></form>
+```
+
+## 7. Investigate a first action {#onboarding}
+
+[Read the chapter](chapters/07-onboarding.qmd)
+
+```{=html}
+<form class="workpad" data-workpad="onboarding" data-title="7. Investigate a first action">
+<label for="onboarding-population">Which population and dates are included, including people who did not finish the baseline?</label><textarea id="onboarding-population" name="population" rows="3" maxlength="6000"></textarea>
+<label for="onboarding-event">What exactly counts as the first response or useful action?</label><textarea id="onboarding-event" name="event" rows="3" maxlength="6000"></textarea>
+<label for="onboarding-unknown">What is unknown about delivery, baseline access, or the reasons people stopped?</label><textarea id="onboarding-unknown" name="unknown" rows="3" maxlength="6000"></textarea>
+<label for="onboarding-break">Where did people stop, and what did follow-up reveal?</label><textarea id="onboarding-break" name="break" rows="3" maxlength="6000"></textarea>
+<label for="onboarding-hypothesis">What explanation and alternative will the next change test?</label><textarea id="onboarding-hypothesis" name="hypothesis" rows="3" maxlength="6000"></textarea>
+<label for="onboarding-assignment">How will you retain assignment, exposure, and later-action records?</label><textarea id="onboarding-assignment" name="assignment" rows="3" maxlength="6000"></textarea>
+<div class="workpad-actions"><button type="button" data-save>Save notes</button><button type="button" data-copy>Copy notes</button><button type="button" data-clear>Clear this tool</button></div><p class="workpad-status" role="status">Not saved yet.</p></form>
+```
+
+## 8. Plan a route back {#continuation}
+
+[Read the chapter](chapters/08-continuation.qmd)
+
+```{=html}
+<form class="workpad" data-workpad="continuation" data-title="8. Plan a route back">
+<label for="continuation-obstacle">What interrupted participation, and how do you know?</label><textarea id="continuation-obstacle" name="obstacle" rows="3" maxlength="6000"></textarea>
+<label for="continuation-state">What task, submission, feedback, and contact state must be preserved?</label><textarea id="continuation-state" name="state" rows="3" maxlength="6000"></textarea>
+<label for="continuation-repair">What next step addresses the obstacle, and who owns it?</label><textarea id="continuation-repair" name="repair" rows="3" maxlength="6000"></textarea>
+<label for="continuation-return">How can the learner pause, return, or decline contact?</label><textarea id="continuation-return" name="return" rows="3" maxlength="6000"></textarea>
+<label for="continuation-check">What will show that the learner could continue from their work?</label><textarea id="continuation-check" name="check" rows="3" maxlength="6000"></textarea>
+<div class="workpad-actions"><button type="button" data-save>Save notes</button><button type="button" data-copy>Copy notes</button><button type="button" data-clear>Clear this tool</button></div><p class="workpad-status" role="status">Not saved yet.</p></form>
+```
+
+## 9. Design useful peer help {#peers}
+
+[Read the chapter](chapters/09-peer-learning.qmd)
+
+```{=html}
+<form class="workpad" data-workpad="peers" data-title="9. Design useful peer help">
+<label for="peers-exchange">What concrete contribution will one peer make to another?</label><textarea id="peers-exchange" name="exchange" rows="3" maxlength="6000"></textarea>
+<label for="peers-matching">Which compatibility criteria matter, and who might the matcher exclude?</label><textarea id="peers-matching" name="matching" rows="3" maxlength="6000"></textarea>
+<label for="peers-consent">How will each person accept or decline the connection?</label><textarea id="peers-consent" name="consent" rows="3" maxlength="6000"></textarea>
+<label for="peers-support">Who handles unanswered requests and obstacles to the shared task?</label><textarea id="peers-support" name="support" rows="3" maxlength="6000"></textarea>
+<label for="peers-value">How will you distinguish a first reply, reciprocal exchange, and useful help?</label><textarea id="peers-value" name="value" rows="3" maxlength="6000"></textarea>
+<div class="workpad-actions"><button type="button" data-save>Save notes</button><button type="button" data-copy>Copy notes</button><button type="button" data-clear>Clear this tool</button></div><p class="workpad-status" role="status">Not saved yet.</p></form>
+```
+
+## 10. Plan an experiment {#experiments}
+
+[Read the chapter](chapters/10-experiments.qmd)
+
+```{=html}
+<form class="workpad" data-workpad="experiments" data-title="10. Plan an experiment">
+<label for="experiments-decision">What decision, mechanism, and alternative explanation will you test?</label><textarea id="experiments-decision" name="decision" rows="3" maxlength="6000"></textarea>
+<label for="experiments-assignment">Who is eligible, what is the assignment unit, and how is assignment retained?</label><textarea id="experiments-assignment" name="assignment" rows="3" maxlength="6000"></textarea>
+<label for="experiments-treatment">What does each arm receive, and how will you verify delivery on a phone?</label><textarea id="experiments-treatment" name="treatment" rows="3" maxlength="6000"></textarea>
+<label for="experiments-outcome">What is the primary outcome, denominator, window, and missing-data rule?</label><textarea id="experiments-outcome" name="outcome" rows="3" maxlength="6000"></textarea>
+<label for="experiments-feasibility">What effect matters, what sample is feasible, and what stopping rule is agreed?</label><textarea id="experiments-feasibility" name="feasibility" rows="3" maxlength="6000"></textarea>
+<label for="experiments-analysis">How will you report uncertainty, delivery failures, and changes during the run?</label><textarea id="experiments-analysis" name="analysis" rows="3" maxlength="6000"></textarea>
+<label for="experiments-action">What result would lead you to adopt, revise, stop, or test again?</label><textarea id="experiments-action" name="action" rows="3" maxlength="6000"></textarea>
+<div class="workpad-actions"><button type="button" data-save>Save notes</button><button type="button" data-copy>Copy notes</button><button type="button" data-clear>Clear this tool</button></div><p class="workpad-status" role="status">Not saved yet.</p></form>
+```
+
+
+<noscript>The questions are readable without JavaScript. Saving and copying notes require JavaScript; you can also select your text and copy it manually.</noscript>

@@ -1,0 +1,42 @@
+# About this web edition
+
+**Building AI Applications for Livelihoods: Lessons and tools from Kabakoo’s WhatsApp learning system** is written by **Kabakoo Academies** for organizations building or adapting AI-supported learning tools.
+
+<mark class="reading-mark">Web edition 7, September 14, 2026.</mark> Ten chapters cover the work from problem framing through continued participation, peer learning, and experimentation. [Five further chapters](coming-next.qmd) will examine outcomes, governance, teams, costs, and adaptation.
+
+## A collective effort
+
+This playbook is a collective effort.
+
+First and foremost, we thank the <mark class="reading-mark">learners who trust us with their hopes and ambitions</mark>. Their questions, work, feedback, and experiences shape what we build and what we learn. We also thank those who have chosen to let us share their stories and photographs.
+
+We thank the <mark class="reading-mark">complete Kabakoo team</mark>, past and present, whose daily work makes this learning possible: supporting learners, designing courses, building and maintaining the technology, conducting research, and turning what we learn into changes in practice.
+
+We are grateful to our research partners at **Paderborn University**—**Dr. Martin Schneider**, **Enja Herdejürgen**, and **Dr. Sumaya Islam**—for helping us design our evaluations and follow learners' progress over time.
+
+We thank **Dr. Abeba Birhane** and **Dr. André Uhl** for the sustained dialogue on AI accountability and AI governance. We also thank **Dr. Hellina Hailu Nigatu** and **Dr. Ellen Rushe** for their collaboration on Bamanankan language technologies.
+
+**Dr. Richard Sedlmayr** and **Catherine Thomas, PhD**, have helped us sharpen our work on mindset, agency, and measurement through conversations since 2023, including the development of the Kabakoo Behavioral Index.
+
+We thank **Temina Madon, PhD**, for her guidance as chair of Kabakoo's board. We also thank **Paul Wang** for encouraging us to turn our experience into tools and a manual that other organizations could use.
+
+We thank **Dr. James Walsh** for his behavioral analysis of onboarding and independent examination of our outcome evidence. We also thank **Elia Gandolfi** for his work with our team on experimentation and learner engagement, including understanding where participation breaks down and how human contact relates to continued learning.
+
+We thank **Edmund Korley** for his technical mentoring since 2023 and his work alongside our engineers on the Kabakoo AI Mentor and its supporting data systems. We also thank **Aman Dalmia** for supporting our team's use of Calibrate to make AI evaluation part of everyday work for learning and content colleagues as well as engineers.
+
+We are grateful to the wider **Agency Fund community**, especially the teams who worked alongside us at the Bangalore and Naivasha 2024 sprints and the July 2026 Nairobi sprint, for sharing their questions, experiments, and practical experience.
+
+## Credits and reuse
+
+::: {.reading-note}
+The text and working tools are shared under **CC BY-SA 4.0**. Credit Kabakoo Academies, identify changes, and share adaptations under the same license. Supporting code uses Apache-2.0. Third-party sources retain their own terms. The text license does not grant unrestricted reuse of photographs or learner likenesses; **contact Kabakoo about image reuse**.
+:::
+
+The four-level evaluation framework is credited to **The Agency Fund**. The playbook draws on **Elia Gandolfi’s** engagement analysis, **Jamie Walsh’s** onboarding diagnosis, **Yanick Kemayou’s** AI evaluation essay, and Kabakoo’s operational and research records. See [Sources](sources.qmd) for the evidence and its limitations.
+
+## Citation
+
+> Kabakoo Academies. (2026). *Building AI Applications for Livelihoods: Lessons and tools from Kabakoo’s WhatsApp learning system*. Web edition 7. https://playbook.kabakoo.africa/
+
+[Citation file](CITATION.cff) · [Text license](LICENSE-CONTENT.txt)
+

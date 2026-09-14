@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite this playbook when adapting its guidance or working tools."
+title: "Building AI Applications for Livelihoods: Lessons and tools from Kabakoo’s WhatsApp learning system"
+authors:
+  - name: "Kabakoo Academies"
+version: "2026.09-v7"
+date-released: 2026-09-14
+url: "https://playbook.kabakoo.africa/"
+license: CC-BY-SA-4.0
+type: book
+repository-code: "https://github.com/Kabakoo/ai-for-livelihoods-playbook"

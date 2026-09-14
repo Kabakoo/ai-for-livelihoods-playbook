@@ -1,0 +1,8 @@
+<script>
+// Quarto UI preferences may be unavailable in a storage-restricted browser.
+// Working notes use their own storage checks and never claim this fallback saves.
+window.kabakooUiStorage = {
+  getItem(key) { try { return window.localStorage.getItem(key); } catch { return null; } },
+  setItem(key,value) { try { window.localStorage.setItem(key,value); } catch {} }
+};
+</script>

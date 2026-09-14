@@ -1,0 +1,12 @@
+/_render/
+/_site/
+/.quarto/
+/.work/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+*.pdf
+
+**/*.quarto_ipynb

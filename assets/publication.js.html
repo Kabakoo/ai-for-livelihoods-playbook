@@ -1,0 +1,148 @@
+<script>
+'use strict';
+document.addEventListener('DOMContentLoaded', () => {
+  const main = document.querySelector('main.content');
+  if (!main) return;
+  const storage = {
+    get(key) { try { return JSON.parse(localStorage.getItem('kabakoo-playbook:'+key)); } catch { return null; } },
+    set(key,value) { try { localStorage.setItem('kabakoo-playbook:'+key,JSON.stringify(value)); return true; } catch { return false; } },
+    remove(key) { try { localStorage.removeItem('kabakoo-playbook:'+key); return true; } catch { return false; } }
+  };
+  const chapter = location.pathname.match(/chapters\/(\d{2}-[a-z-]+\.html)$/)?.[1];
+  if (chapter) {
+    const title = main.querySelector('#title-block-header');
+    const note = document.createElement('p'); note.className='publication-meta';
+    note.textContent=`${Math.ceil(main.innerText.trim().split(/\s+/).length/220)} min read · Kabakoo Academies · September 2026`;
+    const kicker = document.createElement('p'); kicker.className='chapter-kicker';
+    const topics=['Purpose','Theory of change','Research','Learning design','Architecture','AI evaluation','Onboarding','Continuation','Peer learning','Experiments'];
+    kicker.textContent=`Chapter ${chapter.slice(0,2)} · ${topics[Number(chapter.slice(0,2))-1]}`;
+    if (title) { title.prepend(kicker); title.after(note); }
+    storage.set('last-chapter',{file:chapter,title:main.querySelector('h1')?.textContent.trim()});
+    const progress=document.createElement('progress');progress.className='reading-progress';progress.max=100;progress.value=0;progress.setAttribute('aria-label','Chapter reading progress');document.body.append(progress);
+    let queued=false;
+    const update=()=>{const box=main.getBoundingClientRect();const length=Math.max(1,main.offsetHeight-innerHeight);progress.value=Math.max(0,Math.min(100,-box.top/length*100));queued=false;};
+    addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});addEventListener('resize',update);update();
+  }
+  const resume=document.querySelector('#resume-reading'), last=storage.get('last-chapter');
+  if(resume && last && /^(?:0[1-9]|10)-[a-z-]+\.html$/.test(last.file) && typeof last.title==='string') {
+    const a=document.createElement('a');a.href='chapters/'+last.file;a.textContent='Continue reading: '+last.title;resume.append(a);resume.hidden=false;
+  }
+  main.querySelectorAll('table').forEach(table=>{
+    if(table.parentElement.classList.contains('table-responsive'))return;
+    const wrap=document.createElement('div');wrap.className='table-responsive';wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','Scrollable table');table.before(wrap);wrap.append(table);
+  });
+  const summaries={all:'Ten connected decisions, from purpose to continued learning.',purpose:'Start with the work, explain the change, and investigate the conditions for use.',build:'Connect learning, delivery, feedback, continuation, and useful peer help.',evaluate:'Connect the theory of change, learner experience, and evidence from experiments.'};
+  document.querySelectorAll('[data-route]').forEach(button=>button.addEventListener('click',()=>{
+    document.querySelectorAll('[data-route]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+    document.querySelectorAll('[data-routes]').forEach(card=>card.hidden=button.dataset.route!=='all'&&!card.dataset.routes.split(' ').includes(button.dataset.route));
+    document.querySelector('.route-summary').textContent=summaries[button.dataset.route];
+  }));
+  const decks=[];
+  document.querySelectorAll('[data-deck]').forEach(deck=>{
+    const panels=[...deck.querySelectorAll('[data-panel]')],bar=document.createElement('div');
+    bar.className='explorer-controls';bar.setAttribute('role','group');bar.setAttribute('aria-label',deck.getAttribute('aria-label')+' steps');
+    const select=i=>{panels.forEach((p,j)=>p.hidden=i!==j);[...bar.children].forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));};
+    panels.forEach((panel,i)=>{const b=document.createElement('button');b.type='button';b.textContent=panel.dataset.panel;b.setAttribute('aria-controls',panel.id);b.addEventListener('click',()=>select(i));bar.append(b);});
+    deck.prepend(bar);decks.push({panels,select});select(0);
+  });
+  const revealHash=()=>{let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}const target=document.getElementById(id);if(!target)return;decks.forEach(({panels,select})=>{const i=panels.findIndex(p=>p===target||p.contains(target));if(i>=0){select(i);target.scrollIntoView();}});};
+  addEventListener('hashchange',revealHash);revealHash();
+  if(typeof HTMLDialogElement!=='undefined') {
+    let screenOpener=null;
+    const dialog=document.createElement('dialog');dialog.className='screen-dialog';dialog.setAttribute('aria-label','Enlarged interface screenshot');
+    const close=document.createElement('button');close.type='button';close.textContent='Close screen';
+    const hint=document.createElement('p');hint.className='dialog-hint';hint.textContent='Scroll to explore. Press Escape to return.';hint.hidden=true;
+    const viewport=document.createElement('div');viewport.className='dialog-image';
+    const img=document.createElement('img');
+    img.addEventListener('load',()=>{if(dialog.classList.contains('diagram-dialog'))img.style.minWidth=Math.max(780,img.naturalWidth)+'px';});
+    viewport.append(img);dialog.append(close,hint,viewport);document.body.append(dialog);
+    dialog.addEventListener('close',()=>screenOpener?.focus());
+    close.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+    main.querySelectorAll('img[src*="/screens/"],img[src*="/figures/"]').forEach(source=>{
+      const isDiagram=source.getAttribute('src').includes('/figures/');
+      const label=isDiagram?'Enlarge diagram':'Enlarge screen';
+      const b=document.createElement('button');b.type='button';b.className=isDiagram?'zoom-diagram':'zoom-screen';b.textContent=label;b.setAttribute('aria-label',label+': '+source.alt);
+      b.addEventListener('click',()=>{
+        screenOpener=b;img.style.minWidth='';img.src=source.src;img.alt=source.alt;
+        close.textContent=isDiagram?'Close diagram':'Close screen';
+        dialog.classList.toggle('diagram-dialog',isDiagram);dialog.setAttribute('aria-label',isDiagram?'Enlarged diagram':'Enlarged interface screenshot');hint.hidden=!isDiagram;
+        if(isDiagram){viewport.tabIndex=0;viewport.setAttribute('role','region');viewport.setAttribute('aria-label','Scrollable diagram');}
+        else {viewport.removeAttribute('tabindex');viewport.removeAttribute('role');viewport.removeAttribute('aria-label');}
+        dialog.showModal();viewport.scrollTo(0,0);close.focus();
+      });
+      if(source.parentElement.tagName==='PICTURE')source.parentElement.after(b);else source.after(b);
+    });
+  }
+  const traces={
+    ordinary:['The ordinary path',['Record the incoming event and identify the active task.','Generate feedback linked to this submission version.','Store outbound work, send it, and reconcile the delivery receipt.','Leave the task ready for the learner’s next action.']],
+    duplicate:['A repeated webhook should not repeat the task',['Match provider, account, event category, and external event ID.','Find the recorded event; acknowledge it without applying the same transition again.','Keep the original submission and its outbound work.','Inspect the receipt or worker state rather than generating another assessment.']],
+    timeout:['A timeout leaves delivery uncertain',['Record the send attempt and provider identifier if one was returned.','Do not assume the provider rejected the request.','Reconcile available status or route the unresolved case to an operator before retrying.','Preserve the task and prevent conflicting assessments.']],
+    stale:['Feedback must match the version of the work',['Compare the response’s submission reference with the current task version.','Retain the old feedback as history; do not overwrite the newer attempt.','Deliver only feedback that is still relevant, or explain its relationship to the earlier attempt.','Keep the learner’s latest work available for review.']],
+    closed:['Progress survives a closed messaging window',['Keep the submission and pending feedback in program state.','At send time, recheck permission, opt-out, and task relevance.','Use an approved eligible template where permitted, or wait for the learner to return.','A program reminder does not itself reopen the customer-service window.']],
+    scope:['A message ID does not authorize a destination',['Reject group-scoped messages in the private-message queue.','Check conversation ownership or membership as well as scope.','Keep sender and recipient meanings explicit in delivery records.','Investigate any suspected exposure using send executions and actual destinations.']]
+  };
+  document.querySelector('#trace-case')?.addEventListener('change',e=>{
+    const [title,steps]=traces[e.target.value],result=document.querySelector('#trace-result');result.replaceChildren();
+    const h=document.createElement('h3');h.textContent=title;const ol=document.createElement('ol');steps.forEach(s=>{const li=document.createElement('li');li.textContent=s;ol.append(li);});result.append(h,ol);
+  });
+  const matching=document.querySelector('#matching-lab');
+  if(matching){
+    matching.querySelector('.matching-controls').hidden=false;
+    const range=matching.querySelector('#match-weight');
+    const updateMatch=()=>{
+      const weight=Number(range.value),rows=[...matching.querySelectorAll('[data-candidate]')];
+      matching.querySelector('#match-weight-value').textContent=weight+'%';
+      matching.querySelector('#match-caption').textContent=weight+' / '+(100-weight);
+      const scores=rows.map(row=>{
+        const score=(weight*Number(row.dataset.interest)+(100-weight)*Number(row.dataset.proximity))/100;
+        row.querySelector('[data-score]').textContent=Number(score.toFixed(1)).toString();return score;
+      });
+      const best=Math.max(...scores),winners=rows.filter((row,i)=>Math.abs(scores[i]-best)<0.00001);
+      rows.forEach((row,i)=>row.classList.toggle('match-leading',Math.abs(scores[i]-best)<0.00001));
+      matching.querySelector('#match-result').textContent=(winners.length===1?'Group '+winners[0].dataset.candidate+' has the highest score':'Groups '+winners.map(row=>row.dataset.candidate).join(' and ')+' share the highest score')+' ('+Number(best.toFixed(1))+'). Willingness, schedules, and a useful shared task still need to be established.';
+    };
+    range.addEventListener('input',updateMatch);updateMatch();
+  }
+  const support=document.querySelector('#support-lab');
+  if(support){
+    support.querySelector('.support-interaction').hidden=false;support.querySelector('.support-fallback').hidden=true;
+    const states={
+      request:{title:'Ask the peer whether they can help',body:'The request names the task and expected help. The learner’s contact details are not shared at this stage.',choices:[['The peer agrees','learner'],['The peer declines','declined'],['No reply within 24 hours','expired']]},
+      learner:{title:'Ask the learner whether they want the connection',body:'An available peer has agreed to help with this task. The learner can accept or continue without the introduction.',choices:[['The learner agrees','connected'],['The learner declines','learnerDeclined']]},
+      connected:{title:'Both people have agreed',body:'Share the contact details needed for the exchange. Keep the task and a staff support route available. Afterward, ask the learner whether the help was useful.',choices:[['The learner says the help was useful','confirmed'],['The learner still needs help','unresolved'],['The learner does not reply','unknown']]},
+      declined:{title:'The peer is unavailable',body:'Keep the learner’s next attempt available. Offer another helper or staff support. A declined request should not become a failed learning task.',choices:[]},
+      learnerDeclined:{title:'The learner declines the introduction',body:'Respect the choice, keep contact details private, and preserve the next attempt. The learner can request another support route.',choices:[]},
+      expired:{title:'The request needs a new owner',body:'Check that the request is still unresolved, then route it to the Community Curator. Preserve its history so the learner does not have to start again.',choices:[]},
+      confirmed:{title:'Record the learner’s confirmation',body:'The learner reports useful help. Record subsequent task progress separately so you can examine both the exchange and what happened next.',choices:[]},
+      unresolved:{title:'Help is still needed',body:'Route the concrete question and attempted support to the curator. Keep the work available and explain who will respond next.',choices:[]},
+      unknown:{title:'Usefulness is still unknown',body:'Do not record silence as confirmed help. Retain the unanswered check and examine task progress as a separate signal.',choices:[]}
+    };
+    const renderSupport=(key,focus=false)=>{
+      const state=states[key],result=support.querySelector('#support-state'),actions=support.querySelector('#support-actions');
+      support.dataset.state=key;result.replaceChildren();actions.replaceChildren();
+      const h=document.createElement('h3');h.textContent=state.title;h.tabIndex=-1;const p=document.createElement('p');p.textContent=state.body;result.append(h,p);
+      state.choices.forEach(([label,next])=>{const button=document.createElement('button');button.type='button';button.textContent=label;button.dataset.next=next;button.addEventListener('click',()=>renderSupport(next,true));actions.append(button);});
+      if(focus)h.focus();
+    };
+    support.querySelector('#support-reset').addEventListener('click',()=>renderSupport('request',true));renderSupport('request');
+  }
+
+  document.querySelectorAll('[data-workpad]').forEach(form=>{
+    const key='notes:'+form.dataset.workpad,fields=[...form.querySelectorAll('textarea')],status=form.querySelector('[role="status"]'),clear=form.querySelector('[data-clear]');
+    const saved=storage.get(key);
+    if(saved && typeof saved==='object') {fields.forEach(f=>{if(typeof saved[f.name]==='string')f.value=saved[f.name].slice(0,6000);});status.textContent='Loaded from this browser.';}
+    form.addEventListener('submit',e=>e.preventDefault());
+    form.addEventListener('input',()=>{status.textContent='Unsaved changes. Choose Save notes to keep them in this browser.';clear.textContent='Clear this tool';delete clear.dataset.confirm;});
+    form.querySelector('[data-save]').addEventListener('click',()=>{status.textContent=storage.set(key,Object.fromEntries(fields.map(f=>[f.name,f.value])))?'Saved in this browser on this device.':'This browser could not save your notes. Copy them before leaving.';});
+    form.querySelector('[data-copy]').addEventListener('click',async()=>{
+      const text=form.dataset.title+'\n\n'+fields.map(f=>form.querySelector('label[for="'+f.id+'"]').textContent+'\n'+f.value).join('\n\n');
+      try{await navigator.clipboard.writeText(text);status.textContent='Copied. Paste your notes into your team document.';}catch{status.textContent='Clipboard access is unavailable. Select and copy the text in each field.';fields[0].focus();}
+    });
+    clear.addEventListener('click',()=>{
+      if(!clear.dataset.confirm){clear.dataset.confirm='true';clear.textContent='Confirm: clear this tool';status.textContent='Click again to clear this tool’s fields and saved notes.';return;}
+      if(!storage.remove(key)){status.textContent='Saved notes could not be removed. Clear this site’s data in browser settings.';return;}
+      fields.forEach(f=>f.value='');status.textContent='This tool’s notes have been cleared.';clear.textContent='Clear this tool';delete clear.dataset.confirm;
+    });
+  });
+});
+</script>

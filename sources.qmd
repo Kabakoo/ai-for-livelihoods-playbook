@@ -1,0 +1,303 @@
+# Sources and evidence notes
+
+The playbook draws on Kabakoo’s research, operating records, and publications through September 2026. **Dates and populations** below help distinguish implementation choices, observations, and experimental results.
+
+For questions about the research, contact [Kabakoo Academies](mailto:akwaba@kabakoo.africa).
+
+## S1. Activation Sprint {#s1}
+
+**Kabakoo Academies, *WAS Report after 3 day*, April 1, 2025, pp. 1–2.**
+
+The learning sprint launched on March 29. By April 1, **2,463 people had registered** from 10,000 contacts; 305 had submitted first-course work and 182 had received validation. A further 1,600 had clicked Start and received the video without submitting work.
+
+Follow-up traced interruptions to media delivery, messaging, and validation. [Kabakoo’s July 2025 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-072025) explores the experience of bringing structured learning into WhatsApp.
+
+## S2. Research and MVP preparation {#s2}
+
+**Kabakoo Academies, *2025 Annual Report: AI-powered upskilling and community connection via WhatsApp*, September 15–December 31, 2025, §§2.1–2.3; *Memo – WLS MVP Playbook Call prep*, January 15, 2026.**
+
+MVP preparation combined a **336-person usage survey**, a separate **100-person Missabougou survey**, and onboarding tests with fourteen testers in three groups. The surveys explored habits and expectations; the tests examined whether the learning sequence worked.
+
+## S3. Reminder-channel experiment {#s3}
+
+**Kabakoo Academies, *Impact of reminder channels (Push vs WhatsApp) on learner engagement*, July 2026 analysis; [February 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-022026).**
+
+N=271. WhatsApp reminders increased activation by **15.6 percentage points** in the intention-to-treat comparison, 95% CI 4.8–26.4, p=0.005. <mark class="reading-mark">Activation means at least two app logins.</mark> The time-spent estimate was +33%, 95% CI −37% to +184%, p=0.458. The results distinguish getting someone to return from extending the time they spend learning.
+
+## S4. Testimonial-video experiments {#s4}
+
+**Kabakoo Academies, *Testimonial-video onboarding experiment*, February–March 2026.**
+
+Follow-up with nine people identified Android playback problems. After a technical fix, completion was 2.56% for the text version and 2.42% for video. The practical sequence is to check that the media reaches the learner and plays correctly before comparing its educational value.
+
+## S5. Cohort and product design {#s5}
+
+**Kabakoo Academies, *Design de la cohorte pour Highdigenous WLS*, 2025**, and the May 2026 playbook draft, chapter 4. Design specifications for the four-month cohort, 30-day Challenge, four core modules, portfolios, shorter learning inputs, pods, and the earlier matching point at approximately fourteen days. Subsequent changes toward earlier human contact are discussed in S6.
+
+## S6. Published implementation and evaluation essays {#s6}
+
+- [June 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-062026), June 24: the 826-person cohort, in-person contact, prior connection, and bilingual use.
+- [July 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-072026), July 28: peer Pods and the AI Mentor’s participation in group conversations.
+- [August 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-082026), August 27: simplifying the baseline questionnaire, institutional outreach, and evaluation.
+- [The workers are plenty, but we are not seeing them](https://kabakoo.substack.com/p/the-workers-are-plenty-but-we-are), Yanick Kemayou, July 2: knowledge work, existing skills, and productive capability.
+- [The AI worked. Did it work for the learner?](https://kabakoo.substack.com/p/the-ai-worked-did-it-work-for-the), Yanick Kemayou, August 7: following AI responses through product use, changed capability, relationships, and economic mobility.
+
+## S7. Wider study design and longer-term evidence {#s7}
+
+**Kabakoo Academies, [Impact Evidence: Learning, Income, Behavior, and Spillovers](https://kabakoo.notion.site/Kabakoo-Impact-Evidence-Learning-Income-Behavior-and-Spillovers-1f17c76212ab80869297e9c2418c76f9).**
+
+The Paderborn collaboration follows learners in Kabakoo’s **broader hybrid programs**, combining learning content, peers, mentoring, and practical work. Random assignment at intake is followed by analysis of participation and exposure over time. Some comparison participants later entered training or encountered Kabakoo through their communities; the longer-term analysis distinguishes these groups. [Longer-term findings](#s42).
+
+## S8. Groups API investigation {#s8}
+
+**Kabakoo Academies, *Intégration WhatsApp Groups API – Kabakoo Academies*, August 24–31, 2026.**
+
+The August tests covered group creation, management, invitations, webhooks, and sending. Creation and management worked; sending through the direct API path required further work on the provider-held billing line. The September update (S19) follows that dependency.
+
+Chapter 5 uses the limits tested in August. Consult Meta’s [Groups API documentation](https://developers.facebook.com/documentation/business-messaging/whatsapp/groups) when implementing a service.
+
+## S9. Provider and architecture records {#s9}
+
+**Kabakoo Academies, May 2026 playbook draft, chapter 5; product roadmap and operational records, June–August 2026.**
+
+The architecture evolved from WATI to a Turn.io-linked Togo number and work toward wider migration. Chapter 5 follows the dependencies and service versions used during this period.
+
+The [November 2024 support-agent build log](https://www.kabakoo.africa/news/what-weve-learned-of-building-our-whatsapp-support-agent) traces an earlier stage of implementation.
+
+## S10. Governance and tracing {#s10}
+
+**Kabakoo Academies, *KH-WLS AI Governance*, February 2, 2026.**
+
+The workflow combines first-name masking, AutoGen/Langfuse traces, and human oversight, with a fuller self-hosted anonymization agent planned. Protecting identity also requires attention to the personal information people include in free text and audio.
+
+## S11. Translation and recording {#s11}
+
+**Kabakoo Academies, [Before Training, the Data!](https://www.kabakoo.africa/news/before-training-the-data), February 2025.**
+
+Building Bamanankan voice support involved developing sentences from app interactions, translating and reviewing them, recording speech, and refining the interface. The translation screen in Chapter 6 shows how contributors worked with the paired language inputs.
+
+## S12. Bamanankan user test {#s12}
+
+**Kabakoo Academies, *Bamanankan Testing*, August 12–13, 2025.**
+
+Six submissions received scores of 2, 5, 1, 3, 3, and 1, averaging **2.5/5**. The August 2025 test identified misunderstood questions, answers that drifted off topic, and speech or meaning errors—specific cases the team could reproduce and improve.
+
+## S13. Mentor evaluation rubric {#s13}
+
+**Kabakoo Academies, *Kabakoo AI Mentor — L1 Evaluation Rubric*, v1.0, May 23, 2026.**
+
+The rubric covers grounding, instruction-following, safety, tone and dignity, and usefulness. The May 22 baseline scored posture and empathy at 4.8/5, instruction-following at 3.8/5, conciseness at 2.2/5, and lexical adherence at 1.5/5. These results focused iteration on **shorter replies, consistent register, and useful community handoffs**. S36 covers the separate May stress tests.
+
+## S14. Historical mentor metrics {#s14}
+
+**Kabakoo Academies, *Learning From Continuous A/B Experimentation*, May 2025; *Kabakoo AI Mentor impact on Learning Experience*, July 2024; September 2025 AI-system build log.**
+
+The May 2025 app experiment randomly assigned learners to single-agent and multi-agent experiences. Learners in the multi-agent arm completed **1.33 fewer tasks on average**, p=0.03. Stricter validation was one hypothesis for follow-up: examine how assessment changes the learner’s next attempt.
+
+## S15. Contributor consultation {#s15}
+
+**Kabakoo Academies, *Meeting Report on the Bamanankan Data Management Protocol*, May 24, 2025.**
+
+Eight contributors discussed data access, purpose, recognition, privacy, withdrawal, and governance. Their differing priorities make consultation part of designing how the language resource is used.
+
+## S16. Elia Gandolfi’s engagement analysis {#s16}
+
+**Elia Gandolfi, *Kabakoo WLS — Phase One: Learner Engagement*, June 8, 2026, pp. 1–4; [Kabakoo’s June 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-062026).**
+
+Of 826 enrolled learners, 414 took a qualifying action. **Week-zero activity of 84% and week-one activity of 29% use these 414 learners as the denominator.** Qualifying activity includes a learner-sent WhatsApp message, a module video watched, a portfolio task, or in-person participation.
+
+The weighted activity score combines messages × 1, videos × 3, tasks × 5, visits × 2, and workshops × 2. The top 41 learners account for 63% of that score.
+
+The comparison between 73 learners with an **in-person visit or workshop** and 341 without one is observational. It motivates experiments with earlier human contact.
+
+## S17. Jamie Walsh’s onboarding diagnosis {#s17}
+
+**Jamie Walsh, The Agency Fund, *Kabakoo Onboarding Funnel — Diagnostic & Proposals*, March 31, 2026.**
+
+The diagnosis examines the invitation, first response, timing, and trust. In the 826-person event table, **367 people pressed the first button and 459 did not respond**. A separately defined introductory campaign covered 837 invitations and 224 completions; the wider chat-log extract contains 20,165 events across 853 people.
+
+The proposed tests change the invitation, shorten delays, and introduce peers earlier. Each connects an explanation for interrupted onboarding to a specific design decision.
+
+## S18. Kabakoo’s AI evaluation essay {#s18}
+
+**Yanick Kemayou, [The AI worked. Did it work for the learner?](https://kabakoo.substack.com/p/the-ai-worked-did-it-work-for-the), August 7, 2026.**
+
+Kabakoo’s evaluation practice follows The Agency Fund’s **Model, Product, User, and Impact** levels. Maïmouna’s useful feedback, Hadam’s changing entrepreneurial identity, and the experiences of people who stop participating bring the questions back to learners’ lives.
+
+Langfuse, Calibrate, Evidential, Postgres, and dbt connect model traces, rubric scores, experiments, surveys, and behavior over time. Gandolfi’s analysis (S16) supplies the weekly activity definitions.
+
+## S19. September operations update {#s19}
+
+**Kabakoo Academies, *Newsletter — Suivi WhatsApp Kabakoo — Septembre 2026*, September 9, 2026; August–September operations.**
+
+Operational work centered on the provider-held WABA credit line, Turn.io resolution, WATI account limits, and reminders scheduled at **+23 hours**. Nonprofit pricing remained under discussion.
+
+Meta’s [public terms](https://www.whatsapp.com/legal/meta-terms-whatsapp-business) announce a September 23 change. The separate [Business Solution Terms](https://www.whatsapp.com/legal/business-solution-terms?lang=en), modified March 6, also govern AI-provider and data use. Implementation requires reading the applicable agreements together.
+
+## S20. Learner stories and documentary images {#s20}
+
+- Soumaïla K.: [February 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-022026), “Kabakoo Faces”; machine hacking, learning with MICA in 2019, and the ceramic-kiln repair.
+- Fatoumata D.: [July 2025 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-072025), “Kabakoo Faces”; discovering UX/UI design, confidence, and mentoring peers.
+- SENUMA: [March 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-032026); learners presenting experiences and conducting interviews.
+
+These stories concern the wider hybrid program.
+
+## S21. Bamanankan speech architecture and measurements {#s21}
+
+**Kabakoo Academies, *Tell me about Bamanankan: A week at Deep Learning Indaba 2026*, August 26, 2026; *REAL ML Session on Kabakoo’s Bamanankan AI Speech Model*, June 16, 2025.**
+
+The August 2026 voice path connects Bamanankan audio, Bamanankan text, French text, a French response, Bamanankan translation, and audio output. Whisper medium, with **769M parameters** and interleaved training, achieved **0.24 WER on Kabakoo’s held-out split** and **0.33 on an external benchmark**. Direct speech translation was an experimental alternative.
+
+Earlier training with ten hours of community-recorded speech reached **0.64 WER on the “Alan” test set**, from a historical 0.98 baseline. <mark class="reading-mark">Model, test set, and scoring method belong beside each result.</mark>
+
+## S22. Follow-up on interrupted participation {#s22}
+
+**Kabakoo Academies, *Insights Kabakoo Tremplin — April 20 to May 1, 2026*.**
+
+The follow-up register contains 226 rows, including 147 with notes. Calls explored validation, repeated attempts, next steps, expired media, lost chat history, work schedules, and exams. These qualitative accounts help locate the obstacle behind an interruption. [Kabakoo’s May 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-052026) develops the lessons for continuity.
+
+## S23. Pod participation and facilitation {#s23}
+
+**Kabakoo Academies, *Monthly pod observation report*, July 20–August 23, 2026; [July 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-072026).**
+
+Facilitators followed five Pods, including a week without relaunches and subsequent attempts to restart exchanges. The trial examined invitations, timing, and facilitation as ways to help members begin shared work. Useful peer support requires observing the exchange and the work that follows it.
+
+## S24. Matching architecture and earlier peer contact {#s24}
+
+**Kabakoo Academies, *Build the Matching Algorithm*, December 2, 2025; product roadmap, June 2026.**
+
+Matching combines Django, PostgreSQL, HAKILI embeddings, pair scores, candidate groups of three to five, CP-SAT or greedy packing, and membership records. The score expresses the team’s priorities for forming groups; follow-up tests whether those groups produce useful relationships.
+
+June product work focused on earlier matching and the feature snapshots needed to include learners. [Kabakoo’s July 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-072026) explores the role of these connections.
+
+## S25. Learner Success and individual peer support {#s25}
+
+**Kabakoo Academies, *Pods System & Learner Success*, September 8, 2026; *Peer Support*, September 7.**
+
+The next iteration under development connects reminders, agreement from a qualified peer and the learner, help confirmation, and curator support. Explicit confirmation and inferred confirmation have separate rules. The flow is designed to follow a request through to **help the learner can use**.
+
+## S26. AI and human tutorial videos {#s26}
+
+**Kabakoo Academies, *Impact of tutorial format on onboarding clarity*, March 6–11, 2026; [April 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-042026).**
+
+The tutorial experiment assigned 413 learners to AI video and 414 to human video. Of the 202 and 200 readers, respectively, 29 and 22 sent a first message of at least ten characters within 24 hours. Active messagers numbered 73 and 66.
+
+Chapter 10’s explorer compares these denominators. **Reader and active-messager rates describe groups formed after assignment**; the full assigned groups answer the intervention-level question.
+
+## S27. Personalized goal framing {#s27}
+
+**Kabakoo Academies, *Personalized goal framing in onboarding*, July 2, 2026.**
+
+The experiment tested goal framing against completion of the 30-day Challenge. The small sample left the effect unresolved. Follow-up needs to measure completion alongside early activity.
+
+## S28. Work and technology in Lomé's markets {#s28}
+
+**Kabakoo Academies, *L’AI in informal sector*, July 2026.**
+
+Traders in Cacaveli, Assiganmé, and Lomé’s craft village described customer acquisition, product availability, copying concerns, phone use, and support from family or colleagues. Their accounts connect an AI product brief to the work, resources, and relationships already present.
+
+## S29. Channel use and trusted training advice {#s29}
+
+**Kabakoo Academies, *Analysis WhatsApp Usage Survey*, 2025, N=336; *Missabougou survey report*, November 2025, N=100.**
+
+In the 336-person survey, **99.1% used their own phone** and **60.4% had previous WhatsApp training experience**.
+
+In Missabougou, WhatsApp was the principal information channel for **71%** of respondents. Family (51%) and friends or grins (29%) were trusted sources of training advice. The two studies explore different aspects of access and trust.
+
+## S30. Moving between the app and WhatsApp {#s30}
+
+**Kabakoo Academies, *A la refonte: Surveys 01*, March 2026 interview collection.**
+
+Five learners compared the app and WhatsApp across course access, portfolios, calendars, progress, and sharing the program with friends. Their different experiences help identify which parts of the learning journey each interface should support.
+
+## S31. Investigating falling attendance {#s31}
+
+**Kabakoo Academies, *Enquête pour comprendre la chute d’attendance dans le cohort OSC numérique*, August 4, 2025.**
+
+The team contacted 38 people who had never attended and 42 who had stopped; 29 and 40 responded, respectively. Nine continuing participants were interviewed separately in person.
+
+People described work and school schedules, travel, connection problems, lost links, uncertainty about returning, program rules, and attendance missed by QR scanning. More than one obstacle could affect the same learner.
+
+## S32. Incomplete learning transitions {#s32}
+
+**Kabakoo Academies, *Missing Core Module Instructions* and *No Quick Actions After Validation*, July 2, 2026.**
+
+Two delivery problems made the next step unclear: media arriving without instructions, and validation arriving without a next-video or menu action. Both connect message delivery to the learner’s ability to continue.
+
+## S33. Voice preferences and recording concerns {#s33}
+
+**Kabakoo Academies, *Synthesis Mentor Voice*, October 2023.**
+
+Learners discussed text and voice preferences, context of use, recording privacy, navigation, and the formats they wanted to receive. Voice could make expression easier while also raising questions about forwarding and reuse.
+
+## S34. Group messages duplicated into private conversations {#s34}
+
+**Kabakoo Academies, *Duplicated group messages as DM messages*, July 1–4, 2026.**
+
+A group/private-message routing incident led to a queue fix adding `scope = 'dm'`. Chapter 5 uses the case to explain how conversation scope, ownership, send execution, and delivery receipts work together in message routing.
+
+## S35. Bamanankan mentor feedback at SENUMA {#s35}
+
+**Kabakoo Academies, *SENUMA agriculture-mentor feedback*, January 2026.**
+
+Fifteen visitors tried the Bamanankan mentor. Their feedback distinguished understanding the question, relevance, speech intelligibility and pace, repeated attempts, and waiting time. Each is a separate part of making voice support useful.
+
+## S36. May mentor stress tests {#s36}
+
+**Kabakoo Academies, *May 2026 evaluation summary*, June 11, 2026.**
+
+Twenty-five curated stress tests used a strict pass rule: correctness plus 5/5 on every scored dimension. Two passed. The six WhatsApp-formatting cases and a median response length of 184 words focused attention on concise, readable replies.
+
+The stress tests complement the May 22 baseline in S13. Together they give the team concrete cases for improving the mentor.
+
+## S37. Baseline completion as an entry condition {#s37}
+
+**Kabakoo Academies, *Test phone call for T0*, February 18, 2026.**
+
+The entry protocol placed more than eighty baseline questions before training, with at least thirty minutes allocated to completion. Chapter 7 examines how to gather useful baseline information while making the first learning interaction easier to reach.
+
+## S38. Baseline questions and later engagement {#s38}
+
+**Kabakoo Academies, *Baseline Questionnaire & Learner Behavior*, July 17, 2026.**
+
+The analysis links 851 rows across three survey waves and compares ElasticNet with histogram gradient boosting under nested cross-validation. For message count, ElasticNet R² changes from **0.102 with the wave feature to −0.002 without it**. Missing behavior remains distinct from zero activity.
+
+This finding supports examining redundant questions and testing shorter alternatives against the measurements the program needs. [Kabakoo’s August 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-082026) explores that redesign.
+
+## S39. Mali youth trust survey and the turn toward WhatsApp {#s39}
+
+**Michèle Traoré and Yanick Kemayou, [Kabakoo’s December 2024 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-122024), December 22, 2024.**
+
+The Mali youth trust survey covered skills, training, employment, and entrepreneurship. Among **1,079 respondents**, preferred institutional contact channels were WhatsApp 21.5%, email 18.1%, SMS 16.4%, phone calls 13.9%, in person 13.5%, Facebook 7.7%, LinkedIn 5.2%, and TikTok 3.7%.
+
+Comparing recruitment channels at the June 2024 Bamako.ai festival prompted the survey. Its findings led Kabakoo to announce a WhatsApp channel. Parents, teachers, and close friends led trust in people; ORTM led the media ranking. **Channel preference and trust in a messenger shape different design decisions.**
+
+## S40. The service and participation in the first half of 2026 {#s40}
+
+**Kabakoo Academies, *2026 Mid-Year Report*, January–June 2026; [May 2026 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-052026).**
+
+During January–June 2026, **6,671 learners engaged through WhatsApp**. In late March, **826 learners enrolled in the first Tremplin cohort**, beginning a 30-day challenge with one short task each day.
+
+The AI Mentor answers questions and reviews work. App-based courses and portfolios, peers, mentors, and in-person learning spaces support the wider journey. By the end of June, Kabakoo also had a functioning co-learning space in Lomé. Five peer Pods took part in the July–August field trial.
+
+## S41. Maïmouna’s learning journey {#s41}
+
+**Kabakoo Academies, [December 2024 update](https://kabakoo.substack.com/p/kabakoo-monthly-update-122024), “Kabakoo Faces”; [The AI worked. Did it work for the learner?](https://kabakoo.substack.com/p/the-ai-worked-did-it-work-for-the), August 7, 2026.**
+
+Maïmouna joined Kabakoo in 2022. Through storytelling, digital marketing, peer critique, and mentoring, she developed her practice and the identity of **Aÿroün, her hair care brand**.
+
+She describes AI feedback that showed her **what to add or change** and helped her find the courage to submit videos. Her journey connects encouragement to a concrete next attempt.
+
+## S42. Longer-term outcomes in the broader hybrid programs {#s42}
+
+**Kabakoo Academies, [Impact Evidence: Learning, Income, Behavior, and Spillovers](https://kabakoo.notion.site/Kabakoo-Impact-Evidence-Learning-Income-Behavior-and-Spillovers-1f17c76212ab80869297e9c2418c76f9); Yanick Kemayou, [The AI worked. Did it work for the learner?](https://kabakoo.substack.com/p/the-ai-worked-did-it-work-for-the), August 7, 2026.**
+
+The longer-term study follows learners from the D-CLIC and Digital Makers hybrid programs in Mali. At the 32-month follow-up, **11% of participants and 7% of the comparison group reported monthly income above 250,000 FCFA**. The share at or below 40,000 FCFA was 38% and 46%, respectively. Continued training and investment in working tools also form part of the follow-up.
+
+Recruitment used random assignment at intake. The longer-term comparison focuses on respondents without recorded program exposure, with separate models adjusting for baseline characteristics and cohort. These findings concern the **broader hybrid learning experience**: content, peers, mentoring, and practical work.
+
+## External references
+
+The Agency Fund’s [AI Evaluation in the Social Sector](https://eval.playbook.org.ai/) supplies the four-level framework: Model, Product, User, and Impact. The framework was developed with the Center for Global Development; the [TAF repository](https://github.com/agency-fund/taf-ai-eval-playbook) contains its source code. Its [User Funnel Playbook for the Social Sector](https://drive.google.com/file/d/1V9OKYFgThrtUOrGjh8nrTKaFXCPtYIpA/view), credited to Linus Wong, Robert On, Roberta Costa, and Temina Madon, is a companion for defining funnel stages and measures.
+
+Chapter 5 references the [WhatsApp Business Solution Terms](https://www.whatsapp.com/legal/business-solution-terms?lang=en), modified March 6, 2026; the [Business Messaging Policy](https://whatsappbusiness.com/policy/); and the [Python HMAC documentation](https://docs.python.org/3/library/hmac.html#hmac.compare_digest). Platform rules should be checked again when implementing a service.

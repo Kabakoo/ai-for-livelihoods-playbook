@@ -1,0 +1,60 @@
+.orientation-snapshot {
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.5rem;
+  padding:1.3rem 1.5rem;margin:1.7rem 0 0;border-radius:22px 22px 0 0;
+  background:#55415D;color:#F8F3EA;
+  p {display:flex;align-items:center;gap:1rem;margin:0;}
+  strong {font:500 clamp(1.9rem,3vw,2.5rem)/1 Rubik,sans-serif;color:#F9D58B;letter-spacing:-.04em;}
+  span {display:block;font-size:.82rem;line-height:1.45;}
+  > a {grid-column:1/-1;color:#F8F3EA;font-size:.78rem;justify-self:end;}
+  a:focus-visible {outline-color:#F9D58B;}
+}
+.orientation-explorer {
+  margin-top:0;border-top:0;border-radius:0 0 24px 24px;
+  .explorer-controls {display:flex;gap:.5rem;flex-wrap:wrap;}
+  .explorer-controls button {flex:1 1 auto;font-size:.86rem;min-height:44px;}
+  .explorer-panel > h3 {font-size:1.4rem;text-wrap:balance;}
+  .explorer-panel > p {font-size:1rem;}
+  .orientation-drawing {display:block;margin:.5rem -.2rem 0;}
+  .orientation-drawing img {display:block;width:100%;height:auto;}
+  .orientation-drawing + .zoom-diagram {display:none;}
+  .orientation-sequence {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem;text-align:center;font-size:.79rem;line-height:1.4;font-weight:700;margin:.2rem 0 1.4rem;}
+  .orientation-footnote {border-top:1px solid #C3A5C7;padding-top:1rem;font-size:.9rem!important;margin-bottom:0;}
+  .orientation-stories {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem;}
+  .orientation-stories article {min-width:0;}
+  .orientation-stories img {display:block;width:auto;max-width:100%;height:230px;object-fit:contain;background:#F8F3EA;border-radius:14px;margin:.3rem auto 1rem;}
+  .orientation-stories .eyebrow {font-size:.68rem;letter-spacing:.04em;margin:0 0 .4rem;}
+  .orientation-stories h4 {margin:.4rem 0 .7rem;font-size:1.12rem;}
+  .orientation-stories p:not(.eyebrow) {font-size:.94rem;line-height:1.6;margin-bottom:.8rem;}
+  .orientation-stories a {font-size:.88rem;}
+  .orientation-photo-credit {font-size:.76rem!important;margin:.9rem 0 1.1rem;}
+  .orientation-followup {border-top:4px solid #F9D58B;border-bottom:1px solid #C3A5C7;padding:.9rem 0 .2rem;}
+  .orientation-followup summary {color:#55415D;font-weight:700;cursor:pointer;padding:.2rem 0 .8rem;min-height:44px;}
+  .orientation-followup summary:focus-visible {outline:3px solid #55415D;outline-offset:4px;border-radius:4px;}
+  .orientation-followup p {font-size:.92rem;line-height:1.6;}
+  .orientation-decisions {display:grid;gap:1.2rem;}
+  .orientation-decisions article {display:grid;grid-template-columns:2.5rem 1fr;gap:.9rem;padding-bottom:1rem;border-bottom:1px solid #C3A5C7;}
+  .orientation-decisions article:last-child {border:0;padding:0;}
+  .orientation-step {display:grid;place-items:center;width:2.5rem;height:2.5rem;background:#F9D58B;border-radius:50%;font:500 .85rem Rubik,sans-serif;}
+  .orientation-decisions h4 {margin:.2rem 0 .6rem;}
+  .orientation-decisions p {font-size:.96rem;margin:0;}
+}
+@media(max-width:650px) {
+  .orientation-snapshot {padding:1.1rem;gap:1rem;}
+  .orientation-snapshot p {display:block;}
+  .orientation-snapshot strong {display:block;margin-bottom:.6rem;}
+  .orientation-snapshot span {font-size:.76rem;}
+  .orientation-explorer {padding:1.1rem;}
+  .orientation-explorer .orientation-stories {grid-template-columns:1fr;gap:1.5rem;}
+  .orientation-explorer .orientation-stories article {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:1rem;border-bottom:1px solid #C3A5C7;padding-bottom:1.2rem;}
+  .orientation-explorer .orientation-stories img {width:100%;height:auto;margin:0;align-self:start;}
+}
+@media(max-width:520px) {
+  .orientation-explorer .orientation-drawing {margin:.2rem 0 1rem;}
+  .orientation-explorer .orientation-sequence {display:block;text-align:left;font-size:.86rem;}
+  .orientation-sequence span:not(:last-child)::after {content:' · ';white-space:pre;}
+  .orientation-explorer .orientation-stories article {grid-template-columns:1fr;}
+  .orientation-explorer .orientation-stories img {width:min(55%,180px);justify-self:center;}
+}
+@media print {
+  .orientation-explorer details > * {display:block;}
+}

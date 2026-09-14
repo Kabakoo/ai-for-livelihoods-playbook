@@ -1,0 +1,23 @@
+name: Build and check playbook
+
+on:
+  push:
+    branches: [main]
+    tags: ['2026.*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2
+        with:
+          version: '1.10.18'
+      - name: Render and verify the standalone publication
+        run: python3 scripts/build.py
