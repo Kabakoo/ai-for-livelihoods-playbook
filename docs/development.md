@@ -41,6 +41,16 @@ For changes to layout, navigation, or working tools, follow the [browser-check i
 
 GitHub runs the build checks for commits and pull requests. These checks do not deploy the website. Describe the reader-facing change and relevant verification in your pull request; see [Contributing](../CONTRIBUTING.md).
 
+## Optional visitor analytics
+
+Builds have no Google Analytics tag by default. To enable it for your own HTTPS publication, provide your GA4 web stream's measurement ID at build time:
+
+```sh
+PLAYBOOK_GA4_ID=G-YOURMEASUREMENTID python3 scripts/build.py
+```
+
+The script runs only on the exact publication origin configured by `PLAYBOOK_URL`. Local previews and alternate hosting addresses do not track visits. Google Analytics loads automatically on published pages; worksheet text remains local. Google advertising storage, user data, and personalization stay disabled. See [analytics behavior and verification](analytics.md) before enabling an adapted edition.
+
 ## Publish an adapted edition
 
 If you publish an adaptation at another address, set `PLAYBOOK_URL` and `book.site-url` in `_quarto.yml` to that edition’s full base URL. Update `CITATION.cff` and the citation in `versions.qmd` to describe your edition. Keep attribution links to [Kabakoo Academies](https://www.kabakoo.africa/) and the [original playbook](https://playbook.kabakoo.africa/), and review the [reuse terms](assets.md).

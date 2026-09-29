@@ -8,7 +8,7 @@ description: Work through ten practical design tools directly in the playbook.
 Use these ten tools with your learning, engineering, and community colleagues. Choose a decision, write a concrete answer, and return to the chapter when you need an example.
 :::
 
-- **Save notes** stores that tool’s text <mark class="reading-mark">in this browser on this device</mark>. Nothing is sent to Kabakoo. Other people using the same browser can read saved notes.
+- **Save notes** stores that tool’s text <mark class="reading-mark">in this browser on this device</mark>. Your note text is not sent to Kabakoo or Google Analytics. Other people using the same browser can read saved notes.
 - **Copy notes** lets you paste the tool into a shared document. **Clearing browser data removes saved work.**
 
 Use project decisions and anonymized observations; keep participant records in your organization’s own system.

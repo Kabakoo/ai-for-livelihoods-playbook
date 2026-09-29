@@ -133,10 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if(saved && typeof saved==='object') {fields.forEach(f=>{if(typeof saved[f.name]==='string')f.value=saved[f.name].slice(0,6000);});status.textContent='Loaded from this browser.';}
     form.addEventListener('submit',e=>e.preventDefault());
     form.addEventListener('input',()=>{status.textContent='Unsaved changes. Choose Save notes to keep them in this browser.';clear.textContent='Clear this tool';delete clear.dataset.confirm;});
-    form.querySelector('[data-save]').addEventListener('click',()=>{status.textContent=storage.set(key,Object.fromEntries(fields.map(f=>[f.name,f.value])))?'Saved in this browser on this device.':'This browser could not save your notes. Copy them before leaving.';});
+    form.querySelector('[data-save]').addEventListener('click',()=>{
+      const saved=storage.set(key,Object.fromEntries(fields.map(f=>[f.name,f.value])));
+      status.textContent=saved?'Saved in this browser on this device.':'This browser could not save your notes. Copy them before leaving.';
+      if(saved)document.dispatchEvent(new CustomEvent('kabakoo:tool',{detail:{action:'save',tool:form.dataset.workpad}}));
+    });
     form.querySelector('[data-copy]').addEventListener('click',async()=>{
       const text=form.dataset.title+'\n\n'+fields.map(f=>form.querySelector('label[for="'+f.id+'"]').textContent+'\n'+f.value).join('\n\n');
-      try{await navigator.clipboard.writeText(text);status.textContent='Copied. Paste your notes into your team document.';}catch{status.textContent='Clipboard access is unavailable. Select and copy the text in each field.';fields[0].focus();}
+      try{await navigator.clipboard.writeText(text);status.textContent='Copied. Paste your notes into your team document.';document.dispatchEvent(new CustomEvent('kabakoo:tool',{detail:{action:'copy',tool:form.dataset.workpad}}));}catch{status.textContent='Clipboard access is unavailable. Select and copy the text in each field.';fields[0].focus();}
     });
     clear.addEventListener('click',()=>{
       if(!clear.dataset.confirm){clear.dataset.confirm='true';clear.textContent='Confirm: clear this tool';status.textContent='Click again to clear this tool’s fields and saved notes.';return;}

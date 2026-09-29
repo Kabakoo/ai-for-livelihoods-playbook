@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / '_site'
 BASE = os.environ.get('PLAYBOOK_URL', 'https://playbook.kabakoo.africa/').rstrip('/') + '/'
 BASE_HOST = urlsplit(BASE).netloc
+ANALYTICS_ID = os.environ.get('PLAYBOOK_GA4_ID', '').strip()
 
 class Page(HTMLParser):
     def __init__(self, text, url):
@@ -58,6 +59,11 @@ for path, page in pages.items():
     relative = path.relative_to(SITE).as_posix()
     url = BASE + ('' if relative == 'index.html' else relative)
     text = path.read_text()
+    analytics_tags = re.findall(r'<script\b[^>]*data-measurement-id="([^"]+)"[^>]*>', text)
+    assert analytics_tags == ([ANALYTICS_ID] if ANALYTICS_ID else []), ('Analytics configuration', relative)
+    if ANALYTICS_ID:
+        assert 'data-origin="' + urlsplit(BASE).scheme + '://' + BASE_HOST + '"' in text, relative
+        assert 'googletagmanager.com/gtag' not in text, 'Google must load through the origin-checked analytics module'
     assert page.logos == ['https://www.kabakoo.africa/'], relative
     title = re.search(r'<div class="sidebar-title[^"]*">\s*<a href="([^"]*)"', text)
     assert title and urljoin(url, title[1]) == BASE + 'index.html', relative

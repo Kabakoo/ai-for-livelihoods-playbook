@@ -6,12 +6,14 @@ import re
 import shutil
 from html.parser import HTMLParser
 import xml.etree.ElementTree as ET
+from urllib.parse import urlsplit
 from public_links import prepare_links
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "_render"
 TARGET = ROOT / "_site"
 BASE = os.environ.get("PLAYBOOK_URL", "https://playbook.kabakoo.africa/").rstrip("/") + "/"
+ANALYTICS_ID = os.environ.get("PLAYBOOK_GA4_ID", "").strip()
 
 
 class Title(HTMLParser):
@@ -35,6 +37,9 @@ class Title(HTMLParser):
 
 
 def main():
+    if ANALYTICS_ID:
+        assert re.fullmatch(r'G-[A-Z0-9]+', ANALYTICS_ID), 'PLAYBOOK_GA4_ID must be a GA4 measurement ID.'
+        assert urlsplit(BASE).scheme == 'https', 'Analytics requires an HTTPS publication URL.'
     assert (SOURCE / "index.html").is_file(), "Render with scripts/build.py first."
     if TARGET.exists():
         shutil.rmtree(TARGET)
@@ -83,6 +88,11 @@ def main():
         metadata = (f'<meta property="og:url" content="{url}">\n'
                     f'<link rel="canonical" href="{url}">\n'
                     '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False) + '</script>\n')
+        if ANALYTICS_ID:
+            asset_prefix = '../' * (len(page.relative_to(TARGET).parts) - 1) + 'assets/'
+            origin = f'{urlsplit(BASE).scheme}://{urlsplit(BASE).netloc}'
+            metadata += (f'<script defer src="{asset_prefix}analytics.js" data-measurement-id="{ANALYTICS_ID}" '
+                         f'data-origin="{origin}"></script>\n')
         text = text.replace('</head>', metadata + '</head>')
         page.write_text(prepare_links(text, url, BASE))
         urls.append(url)
